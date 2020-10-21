@@ -8,11 +8,12 @@ const Login = () => {
         event.preventDefault();
         const user = {
             email: event.target.email.value,
-            password: event.target.password.value
+            password: event.target.password.value,
         };
         axios.post('http://localhost:3004/users/login', user)
             .then(res => {
-                console.log(res)
+                console.log(res);
+                localStorage.setItem("token", JSON.stringify(res.data.user.token))
             })
             .catch(error => console.log(error.response.data))
     }
