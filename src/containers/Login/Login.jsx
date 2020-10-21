@@ -24,9 +24,9 @@ const Login = () => {
                 <input type="password" name="password" required placeholder="Introduce tu contraseña" />
                 <button type="submit">Log in</button>
             </form>
-            <back>
+            
                 <Link to ='/'>Home</Link>
-            </back>
+            
         </div>
     )
 }
