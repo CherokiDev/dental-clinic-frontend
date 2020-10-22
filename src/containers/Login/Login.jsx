@@ -1,9 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 const Login = () => {
+
+    const history = useHistory();
+    
     const handleSubmit = event => {
         event.preventDefault();
         const user = {
@@ -14,6 +18,12 @@ const Login = () => {
             .then(res => {
                 console.log(res);
                 localStorage.setItem("token", JSON.stringify(res.data.user.token))
+                console.log("hola");
+                
+                setTimeout(() => {
+                    history.push('/')
+                }, 1500);
+
             })
             .catch(error => console.log(error.response.data))
     }
@@ -25,9 +35,9 @@ const Login = () => {
                 <input type="password" name="password" required placeholder="Introduce tu contraseña" />
                 <button type="submit">Log in</button>
             </form>
-            
-                <Link to ='/'>Home</Link>
-            
+
+            <Link to='/'>Home</Link>
+
         </div>
     )
 }
