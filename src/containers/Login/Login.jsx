@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const Login = () => {
@@ -17,7 +16,8 @@ const Login = () => {
         axios.post('http://localhost:3004/users/login', user)
             .then(res => {
                 console.log(res);
-                localStorage.setItem("token", JSON.stringify(res.data.user.token))
+                localStorage.setItem("token", JSON.stringify(res.data.token))
+                localStorage.setItem("user", JSON.stringify(res.data))
                 console.log("hola");
                 
                 setTimeout(() => {
@@ -36,7 +36,7 @@ const Login = () => {
                 <button type="submit">Log in</button>
             </form>
 
-            <Link to='/'>Home</Link>
+            <Link to='/user'>Home</Link>
 
         </div>
     )
