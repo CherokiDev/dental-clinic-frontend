@@ -4,7 +4,7 @@ import './App.css';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Signup from './containers/Signup/Signup';
-import User from './containers/User/User';
+import Profile from './containers/Profile/Profile';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path='/' component={Home} exact/>
         <Route path='/login' component={Login} exact/>
         <Route path='/signup' component={Signup} exact/>
-        <Route path='/user' component={User} exact/>
+        <Route path='/profile' component={Profile} exact/>
       </Switch>
     </BrowserRouter>
   );

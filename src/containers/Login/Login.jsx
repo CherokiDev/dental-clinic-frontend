@@ -18,10 +18,11 @@ const Login = () => {
                 console.log(res);
                 localStorage.setItem("token", JSON.stringify(res.data.token))
                 localStorage.setItem("user", JSON.stringify(res.data))
-                console.log("hola");
+                console.log(localStorage.getItem('token'));
+                
                 
                 setTimeout(() => {
-                    history.push('/')
+                    history.push('/profile')
                 }, 1500);
 
             })
