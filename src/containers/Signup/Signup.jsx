@@ -19,10 +19,10 @@ const Signup = () => {
         };
         axios.post('http://localhost:3004/users/signup', user)
             .then(res => {
-                console.log(res)
-
+                console.log(res.data)
+                localStorage.setItem("user", JSON.stringify(res.data));
                 setTimeout(() => {
-                    history.push('/login')
+                    history.push('/profile')
                 }, 1500);
             })
            .catch(error => console.log(error.response.data))
