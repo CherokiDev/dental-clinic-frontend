@@ -10,10 +10,11 @@ const Profile = () => {
     const history = useHistory();
 
 
-    const salir = () => {
+    const salir = async() => {
         localStorage.clear();
+        await axios.put('http://localhost:3004/users/logout/'+ userLogin.email)
         //localStorage.removeItem('token');
-        history.push('/');
+        await history.push('/');
     }
 
     /*  const validator = JSON.parse(localStorage.getItem('user'));
