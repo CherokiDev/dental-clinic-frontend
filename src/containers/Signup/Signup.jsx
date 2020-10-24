@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const Signup = () => {
+
+    const history = useHistory();
     const handleSubmit = event => {
         event.preventDefault();
         const user = {
@@ -18,6 +20,10 @@ const Signup = () => {
         axios.post('http://localhost:3004/users/signup', user)
             .then(res => {
                 console.log(res)
+
+                setTimeout(() => {
+                    history.push('/login')
+                }, 1500);
             })
            .catch(error => console.log(error.response.data))
     }
