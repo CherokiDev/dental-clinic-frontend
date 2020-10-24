@@ -15,9 +15,19 @@ const ShowAppointments = () => {
         history.push('/');
     }
 
-    useEffect(() => {
+    const estadoCitas = (token) => {
+        return axios.get('http://localhost:3004/appointments/getAppointments/'+ token)
+        .then((res) => {
+            setCitas(res.data.appointment);
+            return res;
+        }).catch((err) => {
+            console.log (err);
+        });
+    }
 
-        axios.get('http://localhost:3004/appointments/getAppointments/' + validator.token)
+    useEffect(async() => {
+
+        /* axios.get('http://localhost:3004/appointments/getAppointments/' + validator.token)
             .then((res) => {
                 console.log(res.data.appointment);
                 setCitas(res.data.appointment);
@@ -27,9 +37,9 @@ const ShowAppointments = () => {
 
             }).catch((err) => {
                 console.log(err);
-            });
+            }); */
 
-        
+        await estadoCitas(validator.token)
             
 
     }, []);
@@ -41,7 +51,7 @@ const ShowAppointments = () => {
         //let storage = JSON.parse(localStorage.getItem("Citas"));
 
         await axios.delete('http://localhost:3004/appointments/deleteAppointment/'+ cita);
-        await setCitas(validator.token)
+        await estadoCitas(validator.token)
 
         console.log(cita);
 

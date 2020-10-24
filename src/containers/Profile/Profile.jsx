@@ -41,7 +41,7 @@ const Profile = () => {
     }  */
 
     return (
-        <body>
+        <div>
             <header>
                 <button onClick={salir}>Salir</button>
             </header>
@@ -50,7 +50,7 @@ const Profile = () => {
                 <Link to="/profile/showAppointments">Mostrar cita</Link>
                 <Link to="/profile/deleteAppointment">Eliminar cita</Link>
             </div>
-        </body>
+        </div>
 
     )
 }
