@@ -72,7 +72,7 @@ const ShowAppointments = () => {
 
         <div className="containerCitas">
                 {/* {datosCitas?.map(cita => <div className="cardCita" key={cita._id} onClick={() => localizaConcretamente(cita)}>{cita.observations}<button>boton</button></div>)} */}
-          {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.date}  {cita.observations}<button onClick={() => localizaConcretamente(cita._id)}>Borrar</button></div>)}
+          {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.date}  {cita.observations}<button className="botonCitas" onClick={() => localizaConcretamente(cita._id)}>Borrar</button></div>)}
         </div>
         
       </body>

@@ -1,9 +1,37 @@
+.header{
+    position: absolute;
+}
+
 .containerCitas{
+    all: unset;
     margin-top: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .citas {
-    padding: 2em;
-    margin: 0em;
-    background-color: aqua;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgba(0, 216, 255, 0.6);
+    width: 40%;
+    color: #222;
+    font-size: 1em;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.botonCitas{
+    border-radius: 0.3em;
+    margin: 0.3em;
+    padding: 0.4em;
+    width: 7em;
+    color: red;
+    font-size: 1em;
+    background-color: #222;
 }
