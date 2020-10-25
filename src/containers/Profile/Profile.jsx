@@ -42,18 +42,23 @@ const Profile = () => {
     }  */
 
     return (
+      <body className="body">
         
-        <div>
-            <header>
-                <button onClick={salir}>Salir</button>
-            </header>
-            <div>
-                <Link to="/profile/newAppointment">Nueva cita</Link>
-                <Link to="/profile/showAppointments">Mostrar cita</Link>
-                <Link to="/profile/deleteAppointment">Eliminar cita</Link>
+        <div className="header">
+            <div className="buttons">
+                <Link to onClick={salir}>Salir</Link>
             </div>
         </div>
 
+        <div className="containerButtons">
+              <div className="buttonsProfile">
+                <Link to="/profile/newAppointment">Nueva cita</Link>
+              </div>
+              <div className="buttonsProfile">
+                <Link to="/profile/showAppointments">Mostrar citas</Link>
+              </div>
+        </div>
+      </body>
     )
 }
 
