@@ -2,7 +2,7 @@
     background-color: #ffffff;
 }
 
-.bodyHome {
+.body {
     margin: 0;
     display: flex;
     width: 100%;
@@ -16,7 +16,7 @@
     background-size: cover;
 }
 
-.headerHome {
+.header {
     background-color: rgba(0, 216, 255, 0.5);
     height: 5em;
     width: 100%;
@@ -26,7 +26,7 @@
     align-items: center;
 }
 
-.buttonLogin {
+.buttons {
     border-radius: 2em;
 
     a {
@@ -46,7 +46,7 @@
     }
 }
 
-.buttonSignup {
+/* .buttonSignup {
     border-radius: 2em;
 
     a {
@@ -64,7 +64,7 @@
             transition: 1s;
         }
     }
-}
+} */
 
 
 .tittleHome {

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import './Signup.scss';
 
 
 const Signup = () => {
 
     const history = useHistory();
+    const [respuesta, setRespuesta] = useState();
     const handleSubmit = event => {
         event.preventDefault();
         const user = {
@@ -21,6 +23,7 @@ const Signup = () => {
             .then(res => {
                 console.log(res.data)
                 localStorage.setItem("user", JSON.stringify(res.data));
+                setRespuesta(`${res.data.firstname} Registro completado`)
                 setTimeout(() => {
                     history.push('/profile')
                 }, 1500);
@@ -29,21 +32,34 @@ const Signup = () => {
     }
 
     return (
-        <div>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <input type="text" name="firstname" required placeholder="Introduce tu nombre"/>
-                <input type="text" name="lastname" required placeholder="Introduce tus apellidos"/>
-                <input type="email" name="email" required placeholder="Introduce tu email"/>
-                <input type="password" name="password" required placeholder="Introduce tu contraseña"/>
-                <input type="tel" name="phone" placeholder="Introduce tu teléfono"/>
-                <input type="date" name="birthdate" placeholder="Introduce tu cumpleaños"/>
-                <input type="text" name="address" placeholder="Introduce tu dirección"/>
+      <body className="body">
+
+        <div className="header">
+          <div className="buttons">
+            <Link to ='/'>Back</Link>
+          </div>
+        </div>
+
+        <div className="containerFormSignUp">
+            <form className="loginForm" onSubmit={handleSubmit}>
+                <input type="text" name="firstname" required placeholder=" Introduce tu nombre"/>
+                <input type="text" name="lastname" required placeholder=" Introduce tus apellidos"/>
+                <input type="email" name="email" required placeholder=" Introduce tu email"/>
+                <input type="password" name="password" required placeholder=" Introduce tu contraseña"/>
+                <input type="tel" name="phone" placeholder=" Introduce tu teléfono"/>
+                <input type="text" name="birthdate" placeholder=" Introduce tu cumpleaños"/>
+                <input type="text" name="address" placeholder=" Introduce tu dirección"/>
                 <button type="submit">Sign Up</button>
             </form>
+
+            <div>
+              {respuesta}
+            </div>
             
-            <Link to ='/'>Home</Link>
+            
             
         </div>
+      </body>
     )
 }
 

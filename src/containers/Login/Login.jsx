@@ -31,10 +31,10 @@ const Login = () => {
 	}
 
 	return (
-		<body className="bodyLogin">
+		<body className="body">
 
-      <div className="headerLogin">
-        <div className="buttonBack">
+      <div className="header">
+        <div className="buttons">
 				  <Link to='/'>Back</Link>
         </div>
       </div>

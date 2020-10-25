@@ -5,13 +5,13 @@ import './Home.scss';
 
 const Home = () => {
   return (
-    <body className="bodyHome">
+    <body className="body">
 
-      <div className="headerHome">
-        <div className="buttonLogin">
+      <div className="header">
+        <div className="buttons">
           <Link to="/login">Login</Link>
         </div>
-        <div className="buttonSignup">
+        <div className="buttons">
           <Link to="/signup">Signup</Link>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, BrowserRouter, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import './Profile.scss';
 
 
 const Profile = () => {
@@ -41,6 +42,7 @@ const Profile = () => {
     }  */
 
     return (
+        
         <div>
             <header>
                 <button onClick={salir}>Salir</button>
