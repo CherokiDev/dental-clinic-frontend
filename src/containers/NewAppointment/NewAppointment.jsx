@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './NewAppointment.scss';
 
 const NewAppointment = () => {
     const validator = JSON.parse(localStorage.getItem('user'));
@@ -17,13 +18,15 @@ const NewAppointment = () => {
     }
 
     return (
+      <body className="body">
         <div>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <input type="text" name="date" required placeholder="Introduce una fecha"/>
-                <input type="text" name="observations" required placeholder="Observaciones"/>
-                <button type="submit">Crear cita</button>
-            </form>            
+          <form className="login-form" onSubmit={handleSubmit}>
+              <input type="text" name="date" required placeholder="Introduce una fecha"/>
+              <input type="text" name="observations" required placeholder="Observaciones"/>
+              <button type="submit">Crear cita</button>
+          </form>            
         </div>
+      </body>
     )
 }
 
