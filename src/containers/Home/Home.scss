@@ -3,7 +3,6 @@
 }
 
 .bodyHome {
-    //background-color: lightgreen;
     margin: 0;
     display: flex;
     width: 100%;
@@ -17,7 +16,7 @@
     background-size: cover;
 }
 
- .botones {
+.headerHome {
     background-color: rgba(0, 216, 255, 0.5);
     height: 5em;
     width: 100%;
@@ -25,29 +24,9 @@
     position: fixed;
     justify-content: space-evenly;
     align-items: center;
-    //opacity: 90%;
 }
 
- .botonLogin {
-     border-radius: 2em;
-
-    a {
-        all: unset;
-        cursor: pointer;
-        color: rgb(0, 216, 255);
-        background-color: #222222;
-        font-size: 1.5em;
-        padding: 0.3em 0.8em;
-        border-radius: 2em;
-        transition: 1s;
-        &:hover {
-            background-color: rgb(84, 84, 84);
-            transition: 1s;
-        }
-    } 
-}
-
-.botonSignup {
+.buttonLogin {
     border-radius: 2em;
 
     a {
@@ -59,17 +38,38 @@
         padding: 0.3em 0.8em;
         border-radius: 2em;
         transition: 1s;
+
         &:hover {
             background-color: rgb(84, 84, 84);
             transition: 1s;
         }
     }
-} 
+}
+
+.buttonSignup {
+    border-radius: 2em;
+
+    a {
+        all: unset;
+        cursor: pointer;
+        color: rgb(0, 216, 255);
+        background-color: #222222;
+        font-size: 1.5em;
+        padding: 0.3em 0.8em;
+        border-radius: 2em;
+        transition: 1s;
+
+        &:hover {
+            background-color: rgb(84, 84, 84);
+            transition: 1s;
+        }
+    }
+}
 
 
 .tittleHome {
     all: unset;
     font-size: 3em;
     margin-top: 5em;
-    
+
 }

@@ -7,11 +7,11 @@ const Home = () => {
   return (
     <body className="bodyHome">
 
-      <div className="botones">
-        <div className="botonLogin">
+      <div className="headerHome">
+        <div className="buttonLogin">
           <Link to="/login">Login</Link>
         </div>
-        <div className="botonSignup">
+        <div className="buttonSignup">
           <Link to="/signup">Signup</Link>
         </div>
       </div>
@@ -19,6 +19,7 @@ const Home = () => {
       <div className="tittleHome">
         DENTAL CLINIC ALWAYS SMILE
       </div>
+      
     </body>
   )
 }

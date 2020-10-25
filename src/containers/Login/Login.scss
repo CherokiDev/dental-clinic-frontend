@@ -1,0 +1,98 @@
+* {
+    background-color: #ffffff;
+}
+
+.bodyLogin {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 50em;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-image: url(../../img/photoHome3.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.headerLogin {
+    background-color: rgba(0, 216, 255, 0.5);
+    height: 5em;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttonBack {
+    border-radius: 2em;
+
+    a {
+        all: unset;
+        cursor: pointer;
+        color: rgb(0, 216, 255);
+        background-color: #222222;
+        font-size: 1.5em;
+        padding: 0.3em 0.8em;
+        border-radius: 2em;
+        transition: 1s;
+
+        &:hover {
+            background-color: rgb(84, 84, 84);
+            transition: 1s;
+        }
+    }
+}
+
+.containerFormLogin {
+    background-color: rgba(0, 216, 255, 0.5);
+    height: 20em;
+    width: 15em;
+    margin-top: 10em;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+
+}
+
+.loginForm{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        margin: 1em;
+        border-radius: 1em;
+        font-size: 1em;
+    }
+
+    button {
+        margin: 1em;
+        border-radius: 1em;
+        font-size: 1.2em;
+        cursor: pointer;
+        color: rgb(0, 216, 255);
+        background-color: #222222;
+        padding: 0.3em 0.8em;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: rgb(84, 84, 84);
+            transition: 0.5s;
+        }
+    }
+    
+}
+/* 
+.formEmail {
+    margin: 2em;
+} */
+
+
