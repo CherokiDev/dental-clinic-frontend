@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Switch, Route, Link, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import './ShowAppointments.scss';
 
 
 const ShowAppointments = () => {
@@ -58,19 +59,23 @@ const ShowAppointments = () => {
     }
 
     return (
-        <div>
-            <header>
-                <button onClick={salir}>Salir</button>
-            </header>
+      <body className="body">
+          
+        <div className="header">
+          <div className="buttons">
+            <Link to="/profile">Back</Link>
+          </div>
+          <div className="buttons">
+            <Link to onClick={salir}>Salir</Link>
+          </div>      
+        </div>
 
-            <div>
+        <div className="containerCitas">
                 {/* {datosCitas?.map(cita => <div className="cardCita" key={cita._id} onClick={() => localizaConcretamente(cita)}>{cita.observations}<button>boton</button></div>)} */}
-                {datosCitas?.map(cita => <div className="tarjetaCitas" key={cita._id}>{cita.date}  {cita.observations}<button onClick={() => localizaConcretamente(cita._id)}>Borrar</button></div>)}
-            </div>
-        <div>
-            <Link to="/profile">Volver</Link>
+          {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.date}  {cita.observations}<button onClick={() => localizaConcretamente(cita._id)}>Borrar</button></div>)}
         </div>
-        </div>
+        
+      </body>
     )
 }
 
