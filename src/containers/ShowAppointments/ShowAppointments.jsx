@@ -61,7 +61,7 @@ const ShowAppointments = () => {
     return (
       <body className="body">
           
-        <div className="header">
+        <div className="header header1">
           <div className="buttons">
             <Link to="/profile">Back</Link>
           </div>

@@ -1,3 +1,34 @@
+![](https://visitor-badge.glitch.me/badge?page_id=cheroki84.appappointmentsfrontend)
+
+---
+# appAppointment 🦷
+## What is AppAppointments? 🤔
+AppAppointments is an application to manage the appointments that a user has. In this case, it is about appointments for a dental clinic.
+> Note: This repository is the frontend of the application.
+> Backend is here [repository](https://github.com/Cheroki84/AppAppointmentsBackend.git)
+---
+## Technologies used 🛠️
+- JavaScript
+- React
+- SCSS
+- Axios
+- Github
+- Heroku
+---
+## Steps to run the application 🚀
+> Note: The application is uploaded to [Heroku](https://appappointmentsfrontend.herokuapp.com/)
+---
+## Some working samples ⚙️
+#### Signup and new appointment
+![](src/img/captura1.gif)
+---
+#### Login, view appointments and delete one
+![](src/img/captura2.gif)
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
