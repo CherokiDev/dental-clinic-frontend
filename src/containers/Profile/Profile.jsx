@@ -13,7 +13,7 @@ const Profile = () => {
 
     const salir = async() => {
         localStorage.clear();
-        await axios.put('http://localhost:3004/users/logout/'+ userLogin.email)
+        await axios.put('https://appappointments.herokuapp.com/users/logout/'+ userLogin.email)
         await history.push('/');
     }
 

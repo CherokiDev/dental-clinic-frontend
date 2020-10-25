@@ -19,7 +19,7 @@ const Signup = () => {
             birthdate: event.target.birthdate.value,
             address: event.target.address.value
         };
-        axios.post('http://localhost:3004/users/signup', user)
+        axios.post('https://appappointments.herokuapp.com/users/signup', user)
             .then(res => {
                 console.log(res.data)
                 localStorage.setItem("user", JSON.stringify(res.data));

@@ -16,7 +16,7 @@ const ShowAppointments = () => {
     }
 
     const estadoCitas = (token) => {
-        return axios.get('http://localhost:3004/appointments/getAppointments/'+ token)
+        return axios.get('https://appappointments.herokuapp.com/appointments/getAppointments/'+ token)
         .then((res) => {
             setCitas(res.data.appointment);
             return res;

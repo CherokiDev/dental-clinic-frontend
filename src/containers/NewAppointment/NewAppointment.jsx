@@ -10,7 +10,7 @@ const NewAppointment = () => {
             date: event.target.date.value,
             observations: event.target.observations.value
         };
-        axios.post('http://localhost:3004/appointments/newAppointment/'+ validator.email, appointment)
+        axios.post('https://appappointments.herokuapp.com/appointments/newAppointment/'+ validator.email, appointment)
             .then(res => {
                 console.log(res)
             })

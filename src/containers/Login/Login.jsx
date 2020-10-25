@@ -14,7 +14,7 @@ const Login = () => {
 			email: event.target.email.value,
 			password: event.target.password.value,
 		};
-		axios.post('http://localhost:3004/users/login', user)
+		axios.post('https://appappointments.herokuapp.com/users/login', user)
 			.then(res => {
 				console.log(res);
 				localStorage.setItem("token", JSON.stringify(res.data.token))
