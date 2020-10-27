@@ -24,6 +24,6 @@ AppAppointments is an application to manage the appointments that a user has. In
 ---
 #### Login, view appointments and delete one
 ![](src/img/captura2.gif)
-
+---
 
 [![Linkedin: Miguel Angel Morato](https://img.shields.io/badge/-ClikMe!-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anmol-p-singh/)](https://www.linkedin.com/in/miguelangelmorato84/)

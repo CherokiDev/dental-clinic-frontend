@@ -26,23 +26,11 @@ const ShowAppointments = () => {
         });
     }
 
-    useEffect(async() => {
-
-        /* axios.get('http://localhost:3004/appointments/getAppointments/' + validator.token)
-            .then((res) => {
-                console.log(res.data.appointment);
-                setCitas(res.data.appointment);
-
-                localStorage.setItem("Citas", JSON.stringify(res.data));
-
-
-            }).catch((err) => {
-                console.log(err);
-            }); */
-
-        await estadoCitas(validator.token)
-            
-
+    useEffect(() => {   
+        const getCitas = async () => {
+          await estadoCitas(validator.token)
+        }
+        getCitas()
     }, []);
 
 
@@ -51,7 +39,7 @@ const ShowAppointments = () => {
         //console.log(cita.title);
         //let storage = JSON.parse(localStorage.getItem("Citas"));
 
-        await axios.delete('http://localhost:3004/appointments/deleteAppointment/'+ cita);
+        await axios.delete('https://appappointments.herokuapp.com/appointments/deleteAppointment/'+ cita);
         await estadoCitas(validator.token)
 
         console.log(cita);

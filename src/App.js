@@ -17,7 +17,7 @@ function App() {
         <Route path='/signup' component={Signup} exact />
         <Route path='/profile' component={Profile} exact />
         <Route path='/profile/newappointment' component={NewAppointment} exact />
-        <Route path='/profile/showappointments' component={ShowAppointments} />
+        <Route path='/profile/showappointments' component={ShowAppointments} exact/>
       </Switch>
     </BrowserRouter>
   );
