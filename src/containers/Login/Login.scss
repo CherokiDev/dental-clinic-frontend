@@ -1,54 +1,10 @@
 * {
     background-color: #ffffff;
 }
-/* 
-.bodyLogin {
-    margin: 0;
-    display: flex;
-    width: 100%;
-    height: 50em;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    background-image: url(../../img/photoHome3.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-} */
-
-/* .headerLogin {
-    background-color: rgba(0, 216, 255, 0.5);
-    height: 5em;
-    width: 100%;
-    display: flex;
-    position: fixed;
-    justify-content: space-evenly;
-    align-items: center;
-} */
-
-/* .buttonBack {
-    border-radius: 2em;
-
-    a {
-        all: unset;
-        cursor: pointer;
-        color: rgb(0, 216, 255);
-        background-color: #222222;
-        font-size: 1.5em;
-        padding: 0.3em 0.8em;
-        border-radius: 2em;
-        transition: 1s;
-
-        &:hover {
-            background-color: rgb(84, 84, 84);
-            transition: 1s;
-        }
-    }
-} */
 
 .containerFormLogin {
     background-color: rgba(0, 216, 255, 0.6);
-    height: 15em;
+    height: 25em;
     width: 15em;
     margin-top: 10em;
     border-radius: 2em;
@@ -57,24 +13,29 @@
     align-items: center;
     flex-direction: column;
     position: fixed;
-
 }
 
 .loginForm{
     all: unset;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 
     input {
         margin: 1em;
-        border-radius: 1em;
+        border-radius: 0.3em;
         font-size: 1em;
+        padding: 0.3em;
+    }
+
+    input::placeholder{
+        font-size: 0.9em;
     }
 
     button {
         margin: 1em;
+        margin-left: 4em;
         border-radius: 1em;
         font-size: 1.2em;
         cursor: pointer;
@@ -90,9 +51,28 @@
     }
     
 }
-/* 
-.formEmail {
-    margin: 2em;
-} */
+
+.textForm {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 0.2em;
+    padding: 0.1em;
+    margin-left: 1em;
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+.mensajeError {
+    all: unset;
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 1em;
+    border-radius: 0.3em;
+}
+
 
 
