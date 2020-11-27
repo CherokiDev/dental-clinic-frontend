@@ -5,7 +5,7 @@
 ## What is AppAppointments? 🤔
 AppAppointments is an application to manage the appointments that a user has. In this case, it is about appointments for a dental clinic.
 > Note: This repository is the frontend of the application.
-> Backend is here [repository](https://github.com/Cheroki84/AppAppointmentsBackend.git)
+> Backend is here [repository](https://github.com/Cheroki84/dental-clinic-backend)
 ---
 ## Technologies used 🛠️
 - JavaScript
