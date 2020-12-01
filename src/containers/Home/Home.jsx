@@ -9,10 +9,10 @@ const Home = () => {
 
       <div className="header">
         <div className="buttons">
-          <Link to="/login">Login</Link>
+          <Link to="/client">Client</Link>
         </div>
         <div className="buttons">
-          <Link to="/signup">Signup</Link>
+          <Link to="/signup">Dentist</Link>
         </div>
       </div>
 
