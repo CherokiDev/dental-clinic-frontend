@@ -8,14 +8,15 @@ const NewAppointment = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const appointment = {
-            date: event.target.date.value,
-            observations: event.target.observations.value
+            tipo: event.target.tipo.value,
+            descripcion: event.target.descripcion.value,
+            precio: event.target.precio.value
         };
-        axios.post('https://appappointments.herokuapp.com/appointments/newAppointment/'+ validator.email, appointment)
+        axios.post('http://localhost:8000/api/citas/store', appointment)
             .then(res => {
                 console.log(res)
             })
-           .catch(error => console.log(error.response.data))
+           .catch(error => console.log(error.response))
     }
 
     const history = useHistory();
@@ -42,8 +43,12 @@ const NewAppointment = () => {
 
         <div className="containerFormLogin">
           <form className="loginForm" onSubmit={handleSubmit}>
-          <input type="text" name="date" required placeholder="Introduce una fecha"/>
-          <input type="text" name="observations" required placeholder="Observaciones"/>
+          <input type="text" name="tipo" required placeholder="Introduce un tipo"/>
+          <input type="text" name="descripcion" required placeholder="Introduce una descripcion"/>
+          <input type="text" name="precio" required placeholder="Introduce un precio"/>
+          <select name="cliente" id="">
+            <option value="">Cliente</option>
+          </select>
           <button type="submit">Crear cita</button>
           </form>            
         </div>

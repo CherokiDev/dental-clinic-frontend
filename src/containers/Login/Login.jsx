@@ -9,13 +9,15 @@ const Login = () => {
 	const history = useHistory();
 	const [mensajeError, setMensajeError] = useState();
 
+	
+
 	const handleSubmit = event => {
 		event.preventDefault();
 		const user = {
 			email: event.target.email.value,
 			password: event.target.password.value,
 		};
-		axios.post('https://appappointments.herokuapp.com/users/login', user)
+		axios.post('http://localhost:8000/api/clientes/login', user)
 			.then(res => {
 				console.log(res);
 				localStorage.setItem("token", JSON.stringify(res.data.token))
@@ -35,6 +37,7 @@ const Login = () => {
 			})
 			
 	}
+
 
 	return (
 		<body className="body">

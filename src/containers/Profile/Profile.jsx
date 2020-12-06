@@ -7,6 +7,8 @@ import './Profile.scss';
 const Profile = () => {
     const userLogin = JSON.parse(localStorage.getItem('user'));
     //const [datosCitas, setCitas] = useState([]);
+    const compruebaToken = localStorage.getItem('token');
+
 
     const history = useHistory();
 
@@ -16,6 +18,21 @@ const Profile = () => {
         await axios.put('https://appappointments.herokuapp.com/users/logout/'+ userLogin.email)
         await history.push('/');
     }
+
+    
+	
+	useEffect(() => {
+		axios.get('http://localhost:8000/api/clientes/', {
+			headers: {
+				Authorization: "Bearer " + compruebaToken.replace(/\"/g, "")
+			}
+		})
+		.then(res => {
+			localStorage.setItem("clientes", JSON.stringify(res.data));
+		}).catch((err) => {
+			console.log(err)
+		});
+	}, [])
 
     /*  const validator = JSON.parse(localStorage.getItem('user'));
      //if (!validator) return <Redirect to='/' />
