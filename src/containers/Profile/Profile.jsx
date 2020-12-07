@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, BrowserRouter, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './Profile.scss';
+import { GET_ALL_CLIENTS } from '../../redux/types';
+import { connect } from 'react-redux';
 
 
-const Profile = () => {
+const Profile = (props) => {
     const userLogin = JSON.parse(localStorage.getItem('user'));
     //const [datosCitas, setCitas] = useState([]);
     const compruebaToken = localStorage.getItem('token');
@@ -28,7 +30,8 @@ const Profile = () => {
 			}
 		})
 		.then(res => {
-			localStorage.setItem("clientes", JSON.stringify(res.data));
+      localStorage.setItem("clientes", JSON.stringify(res.data));
+      props.dispatch({ type: GET_ALL_CLIENTS, payload: res.data});
 		}).catch((err) => {
 			console.log(err)
 		});
@@ -79,5 +82,9 @@ const Profile = () => {
     )
 }
 
+const mapStateToProps = state => {
+  return { clients: state.clients }
+}
 
-export default Profile;
+
+export default connect(mapStateToProps)(Profile);

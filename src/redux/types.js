@@ -1,0 +1,1 @@
+export const GET_ALL_CLIENTS = 'GET_ALL_CLIENTS';

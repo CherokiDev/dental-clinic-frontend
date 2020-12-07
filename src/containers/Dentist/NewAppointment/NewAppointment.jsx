@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import './NewAppointment.scss';
+import { connect } from 'react-redux';
 
-const NewAppointment = () => {
+const NewAppointment = (props) => {
     const validator = JSON.parse(localStorage.getItem('user'));
+
+    const [search, setSearch] = useState("");
+
+    const searchClients = event => {
+      setSearch(event.target.value)
+    }
+
+    const searchEngine = (props) => {
+      const result = props.clients?.filter(client => {
+        return client.nombre.toLowerCase().indexOf(search.toLowerCase()) !== -1
+      })
+      if (search)
+        return result.map(client => <div>{client.nombre}</div>)
+    }
+
+
+
     const handleSubmit = event => {
         event.preventDefault();
         const appointment = {
@@ -46,10 +64,10 @@ const NewAppointment = () => {
           <input type="text" name="tipo" required placeholder="Introduce un tipo"/>
           <input type="text" name="descripcion" required placeholder="Introduce una descripcion"/>
           <input type="text" name="precio" required placeholder="Introduce un precio"/>
-          <select name="cliente" id="">
-            
-              <option value="">Cliente</option>
-          </select>
+          <input type="text" placeholder="Buscar" onKeyUp={searchClients}></input>
+          <div className="listaClientes">
+            {searchEngine(props)}
+          </div>
           <button type="submit">Crear cita</button>
           </form>            
         </div>
@@ -58,4 +76,8 @@ const NewAppointment = () => {
     )
 }
 
-export default NewAppointment;
+const mapStateToProps = state => {
+  return { clients:state.clients }
+}
+
+export default connect(mapStateToProps)(NewAppointment);
