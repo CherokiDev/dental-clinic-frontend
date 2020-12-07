@@ -5,7 +5,7 @@ import Home from './containers/Home/Home';
 import Client from './containers/Client/Client';
 import LoginClient from './containers/Client/Login/LoginClient';
 import SignupClient from './containers/Client/Signup/SignupClient';
-import Profile from './containers/Profile/Profile';
+import ProfileDentist from './containers/Dentist/Profile/ProfileDentist';
 import NewAppointment from './containers/Dentist/NewAppointment/NewAppointment';
 import ShowAppointments from './containers/ShowAppointments/ShowAppointments';
 import Dentist from './containers/Dentist/Dentist';
@@ -23,8 +23,8 @@ function App() {
         <Route path='/dentist' component={Dentist} exact />
         <Route path='/dentist/login' component={LoginDentist} exact />
         <Route path='/dentist/signup' component={SignupDentist} exact />
-        <Route path='/profile' component={Profile} exact />
-        <Route path='/profile/newappointment' component={NewAppointment} exact />
+        <Route path='/dentist/profile' component={ProfileDentist} exact />
+        <Route path='/dentist/newappointment' component={NewAppointment} exact />
         <Route path='/profile/showappointments' component={ShowAppointments} exact/>
       </Switch>
     </BrowserRouter>

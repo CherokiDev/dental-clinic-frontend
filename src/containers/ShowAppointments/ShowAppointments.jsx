@@ -6,7 +6,7 @@ import './ShowAppointments.scss';
 
 const ShowAppointments = () => {
     const [datosCitas, setCitas] = useState([]);
-    const validator = JSON.parse(localStorage.getItem('user'));
+    const validator = JSON.parse(localStorage.getItem('Dentista'));
 
     const history = useHistory();
 
@@ -16,10 +16,10 @@ const ShowAppointments = () => {
         history.push('/');
     }
 
-    const estadoCitas = (token) => {
-        return axios.get('https://appappointments.herokuapp.com/appointments/getAppointments/'+ token)
+    const estadoCitas = () => {
+        return axios.get('http://localhost:8000/api/citas')
         .then((res) => {
-            setCitas(res.data.appointment);
+            setCitas(res.data);
             return res;
         }).catch((err) => {
             console.log (err);
@@ -39,7 +39,7 @@ const ShowAppointments = () => {
         //console.log(cita.title);
         //let storage = JSON.parse(localStorage.getItem("Citas"));
 
-        await axios.delete('https://appappointments.herokuapp.com/appointments/deleteAppointment/'+ cita);
+        await axios.delete('http://localhost:8000/api/citas/'+ cita);
         await estadoCitas(validator.token)
 
         console.log(cita);
@@ -51,7 +51,7 @@ const ShowAppointments = () => {
           
         <div className="header header1">
           <div className="buttons">
-            <Link to="/profile">Back</Link>
+            <Link to="/dentist/profile">Back</Link>
           </div>
           <div className="buttons">
             <Link to onClick={salir}>Salir</Link>
@@ -60,7 +60,7 @@ const ShowAppointments = () => {
 
         <div className="containerCitas">
                 {/* {datosCitas?.map(cita => <div className="cardCita" key={cita._id} onClick={() => localizaConcretamente(cita)}>{cita.observations}<button>boton</button></div>)} */}
-          {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.date}  {cita.observations}<button className="botonCitas" onClick={() => localizaConcretamente(cita._id)}>Borrar</button></div>)}
+          {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.tipo}  {cita.descripcion} {cita.precio}<button className="botonCitas" onClick={() => localizaConcretamente(cita.id)}>Borrar</button></div>)}
         </div>
         
       </body>

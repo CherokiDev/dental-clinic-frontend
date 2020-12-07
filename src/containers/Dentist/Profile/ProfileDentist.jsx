@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import './Profile.scss';
-import { GET_ALL_CLIENTS } from '../../redux/types';
+import './ProfileDentist.scss';
+import { GET_ALL_CLIENTS, LOGOUT } from '../../../redux/types';
 import { connect } from 'react-redux';
 
 
@@ -17,8 +17,9 @@ const Profile = (props) => {
 
     const salir = async() => {
         localStorage.clear();
-        await axios.put('https://appappointments.herokuapp.com/users/logout/'+ userLogin.email)
-        await history.push('/');
+        //await axios.put('https://appappointments.herokuapp.com/users/logout/'+ userLogin.email)
+        history.push('/');
+        await props.dispatch({ type: LOGOUT, payload: {}});
     }
 
     
@@ -72,7 +73,7 @@ const Profile = (props) => {
 
         <div className="containerButtons">
               <div className="buttonsProfile">
-                <Link to="/profile/newAppointment">Nueva cita</Link>
+                <Link to="/dentist/newAppointment">Nueva cita</Link>
               </div>
               <div className="buttonsProfile">
                 <Link to="/profile/showAppointments">Mostrar citas</Link>

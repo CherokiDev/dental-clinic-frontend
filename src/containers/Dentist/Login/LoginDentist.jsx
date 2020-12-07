@@ -32,7 +32,7 @@ const Login = (props) => {
 
 
 				setTimeout(() => {
-					history.push('/profile')
+					history.push('/dentist/profile')
 				}, 1500);
 
 			})

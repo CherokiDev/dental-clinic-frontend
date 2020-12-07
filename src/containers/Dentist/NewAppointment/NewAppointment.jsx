@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import './NewAppointment.scss';
 import { connect } from 'react-redux';
+import { LOGOUT } from '../../../redux/types';
 
 const NewAppointment = (props) => {
     const validator = JSON.parse(localStorage.getItem('user'));
@@ -46,8 +47,10 @@ const NewAppointment = (props) => {
 
     const salir = async() => {
       localStorage.clear();
-      await axios.put('https://appappointments.herokuapp.com/users/logout/'+ validator.email)
-      await history.push('/');
+      //await axios.put('https://appappointments.herokuapp.com/users/logout/'+ validator.email)
+      history.push('/');
+      await props.dispatch({ type: LOGOUT, payload: {}});
+
   }
 
     return (
@@ -55,7 +58,7 @@ const NewAppointment = (props) => {
 
         <div className="header">
           <div className="buttons">
-				    <Link to='/profile'>Back</Link>
+				    <Link to='/dentist/profile'>Back</Link>
           </div>
           <div className="buttons">
             <Link to onClick={salir}>Salir</Link>
