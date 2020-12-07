@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import { GET_DENTIST } from '../../../redux/types';
+import { connect } from 'react-redux';
 
 
 
-const Login = () => {
+const Login = (props) => {
 
 	const history = useHistory();
 	const [mensajeError, setMensajeError] = useState();
@@ -17,11 +19,14 @@ const Login = () => {
 			email: event.target.email.value,
 			password: event.target.password.value,
 		};
+
 		axios.post('http://localhost:8000/api/dentistas/login', user)
 			.then(res => {
 				console.log(res);
 				localStorage.setItem("token", JSON.stringify(res.data.token))
-				localStorage.setItem("user", JSON.stringify(res.data))
+				localStorage.setItem("Dentista", JSON.stringify(res.data))
+				props.dispatch({ type: GET_DENTIST, payload: res.data})
+				
 				console.log(localStorage.getItem('token'));
 				
 
@@ -63,4 +68,8 @@ const Login = () => {
 	)
 }
 
-export default Login;
+const mapStateToProps = state => {
+	return { dentist: state.dentist }
+}
+
+export default connect(mapStateToProps)(Login);

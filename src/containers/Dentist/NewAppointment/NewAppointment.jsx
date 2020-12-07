@@ -8,6 +8,7 @@ const NewAppointment = (props) => {
     const validator = JSON.parse(localStorage.getItem('user'));
 
     const [search, setSearch] = useState("");
+    const [selectedClient, setSelectedClient] = useState({});
 
     const searchClients = event => {
       setSearch(event.target.value)
@@ -18,17 +19,20 @@ const NewAppointment = (props) => {
         return client.nombre.toLowerCase().indexOf(search.toLowerCase()) !== -1
       })
       if (search)
-        return result.map(client => <div>{client.nombre}</div>)
+        return result.map(client => <div onClick={() => setSelectedClient(client)}>{client.nombre}</div>)
     }
 
 
+    const compruebaDentista = JSON.parse(localStorage.getItem('Dentista'))
 
     const handleSubmit = event => {
         event.preventDefault();
         const appointment = {
             tipo: event.target.tipo.value,
             descripcion: event.target.descripcion.value,
-            precio: event.target.precio.value
+            precio: event.target.precio.value,
+            cliente_id: event.target.cliente_id.value,
+            dentista_id: compruebaDentista.id
         };
         axios.post('http://localhost:8000/api/citas/store', appointment)
             .then(res => {
@@ -64,7 +68,9 @@ const NewAppointment = (props) => {
           <input type="text" name="tipo" required placeholder="Introduce un tipo"/>
           <input type="text" name="descripcion" required placeholder="Introduce una descripcion"/>
           <input type="text" name="precio" required placeholder="Introduce un precio"/>
-          <input type="text" placeholder="Buscar" onKeyUp={searchClients}></input>
+          <input name="cliente_id" value={selectedClient.id} hidden/>
+          {/* <input name="dentista_id" value="1" hidden/> */}
+          <input type="text" value={selectedClient.nombre} placeholder="Buscar cliente" onKeyUp={searchClients}></input>
           <div className="listaClientes">
             {searchEngine(props)}
           </div>
