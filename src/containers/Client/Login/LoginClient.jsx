@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
-import './Login.scss';
+import './LoginClient.scss';
 
 
 const Login = () => {
@@ -44,7 +44,7 @@ const Login = () => {
 
 			<div className="header">
 				<div className="buttons">
-					<Link to='/'>Back</Link>
+					<Link to='/client'>Back</Link>
 				</div>
 			</div>
 

@@ -47,7 +47,8 @@ const NewAppointment = () => {
           <input type="text" name="descripcion" required placeholder="Introduce una descripcion"/>
           <input type="text" name="precio" required placeholder="Introduce un precio"/>
           <select name="cliente" id="">
-            <option value="">Cliente</option>
+            
+              <option value="">Cliente</option>
           </select>
           <button type="submit">Crear cita</button>
           </form>            

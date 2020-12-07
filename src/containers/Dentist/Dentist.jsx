@@ -8,10 +8,10 @@ const Client = () => {
   
         <div className="header">
           <div className="buttons">
-            <Link to="/client/login">Login</Link>
+            <Link to="/dentist/login">Login</Link>
           </div>
           <div className="buttons">
-            <Link to="/client/signup">Signup</Link>
+            <Link to="/dentist/signup">Signup</Link>
           </div>
           <div className="buttons">
               <Link to="/">Back</Link>
