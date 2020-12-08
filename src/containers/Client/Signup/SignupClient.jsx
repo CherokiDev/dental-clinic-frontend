@@ -15,7 +15,7 @@ const Signup = () => {
       email: event.target.email.value,
       password: event.target.password.value
     };
-    axios.post('https://dental-clinic-b-laravel.herokuapp.com/api/clientes/register', user)
+    axios.post('http://localhost:8000/api/clientes/register', user)
       .then(res => {
         //console.log(res.data)
         localStorage.setItem("user", JSON.stringify(res));
