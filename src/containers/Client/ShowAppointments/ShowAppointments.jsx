@@ -54,7 +54,7 @@ const ShowAppointments = () => {
             <Link to="/dentist/profile">Back</Link>
           </div>
           <div className="buttons">
-            <Link to onClick={salir}>Salir</Link>
+            <Link to onClick={salir}>Logout</Link>
           </div>      
         </div>
 
