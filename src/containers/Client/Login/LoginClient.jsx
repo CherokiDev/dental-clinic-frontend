@@ -11,7 +11,7 @@ const Login = (props) => {
 	const history = useHistory();
 	const [mensajeError, setMensajeError] = useState();
 
-	
+
 
 	const handleSubmit = event => {
 		event.preventDefault();
@@ -24,8 +24,8 @@ const Login = (props) => {
 				console.log(res);
 				localStorage.setItem("token", JSON.stringify(res.data.token))
 				localStorage.setItem("Cliente", JSON.stringify(res.data))
-				props.dispatch({ type: GET_CLIENT, payload: res.data})
-				
+				props.dispatch({ type: GET_CLIENT, payload: res.data })
+
 
 
 				setTimeout(() => {
@@ -37,7 +37,7 @@ const Login = (props) => {
 				//console.log(error.response.data);
 				setMensajeError(error.response.data.message)
 			})
-			
+
 	}
 
 
@@ -45,9 +45,12 @@ const Login = (props) => {
 		<body className="body">
 
 			<div className="header">
-				<div className="buttons">
-					<Link to='/client'>Back</Link>
+				<div className="button-back">
+					<Link to='/client'></Link>
 				</div>
+				<div className="tittleHome2">
+					DENTAL CLINIC ALWAYS SMILE
+            	</div>
 			</div>
 
 			<div className="containerFormLogin">

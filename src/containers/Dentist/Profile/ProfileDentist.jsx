@@ -38,30 +38,6 @@ const Profile = (props) => {
 		});
 	}, [])
 
-    /*  const validator = JSON.parse(localStorage.getItem('user'));
-     //if (!validator) return <Redirect to='/' />
-     useEffect(() => {
- 
-         //console.log(tokenBody.body.token_user)
-         axios.get('http://localhost:3004/appointments/getAppointments/'+ validator.token)
-         .then( (res) => {
-             console.log(res.data.appointment);
-             setCitas(res.data.appointment);
- 
-            // setCitas(localStorage.setItem("Citas", JSON.stringify(res.data)));
-         	
-         }).catch( (err) => {
-             console.log( err );
-         });
- 
-     },[]); */
-
-    /*  const localizaConcretamente = (cita) => {
-         //console.log(cita.title);
-         let storage = JSON.parse(localStorage.getItem("Citas"));
-         console.log(storage);
-    }  */
-
     return (
       <body className="body">
         
