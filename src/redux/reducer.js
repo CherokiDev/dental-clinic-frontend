@@ -1,6 +1,6 @@
-const { GET_ALL_CLIENTS, GET_DENTIST, LOGOUT } = require("./types");
+const { GET_ALL_CLIENTS, GET_DENTIST, LOGOUT, GET_CLIENT } = require("./types");
 
-const initialState = { clients: [], dentist: {} };
+const initialState = { clients: [], dentist: {}, client: {} };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -13,6 +13,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 dentist: action.payload
+            };
+        case GET_CLIENT:
+            return {
+                ...state,
+                client: action.payload
             };
         case LOGOUT:
             return {

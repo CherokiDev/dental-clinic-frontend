@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import './LoginClient.scss';
+import { GET_CLIENT } from '../../../redux/types';
+import { connect } from 'react-redux';
 
 
-const Login = () => {
+const Login = (props) => {
 
 	const history = useHistory();
 	const [mensajeError, setMensajeError] = useState();
@@ -21,13 +23,13 @@ const Login = () => {
 			.then(res => {
 				console.log(res);
 				localStorage.setItem("token", JSON.stringify(res.data.token))
-				localStorage.setItem("user", JSON.stringify(res.data))
-				console.log(localStorage.getItem('token'));
+				localStorage.setItem("Cliente", JSON.stringify(res.data))
+				props.dispatch({ type: GET_CLIENT, payload: res.data})
 				
 
 
 				setTimeout(() => {
-					history.push('/profile')
+					history.push('/client/profile')
 				}, 1500);
 
 			})
@@ -63,4 +65,8 @@ const Login = () => {
 	)
 }
 
-export default Login;
+const mapStateToProps = state => {
+	return { client: state.client }
+}
+
+export default connect(mapStateToProps)(Login);

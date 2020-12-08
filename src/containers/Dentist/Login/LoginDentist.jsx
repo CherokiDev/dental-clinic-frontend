@@ -27,7 +27,7 @@ const Login = (props) => {
 				localStorage.setItem("Dentista", JSON.stringify(res.data))
 				props.dispatch({ type: GET_DENTIST, payload: res.data})
 				
-				console.log(localStorage.getItem('token'));
+				//console.log(localStorage.getItem('token'));
 				
 
 

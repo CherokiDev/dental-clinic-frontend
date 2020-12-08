@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import './ProfileDentist.scss';
+import './ProfileClient.scss';
 import { GET_ALL_CLIENTS, LOGOUT } from '../../../redux/types';
 import { connect } from 'react-redux';
 
@@ -76,7 +76,7 @@ const Profile = (props) => {
                 <Link to="/dentist/newAppointment">Nueva cita</Link>
               </div>
               <div className="buttonsProfile">
-                <Link to="/dentist/showAppointments">Mostrar citas</Link>
+                <Link to="/client/showAppointments">Mostrar citas</Link>
               </div>
         </div>
       </body>
