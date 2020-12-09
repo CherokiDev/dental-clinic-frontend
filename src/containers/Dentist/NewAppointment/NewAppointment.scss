@@ -1,6 +1,104 @@
 .listaClientes {
-    background-color: rgb(236, 215, 215);
-    width: 10em;
+    background-color: transparent;
     height: 3em;
-    cursor: pointer;
+    left: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+        div {
+            background-color: #222222;
+            color: white;
+            margin: 0.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.3em;
+        }
+    
 }
+
+.containerFormNew {
+    background-color: rgba(0, 216, 255, 0.6);
+    height: 100%;
+    width: 90%;
+    margin-top: 6em;
+    border-radius: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+}
+
+.loginFormNew {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+
+    input {
+        margin: 0.5em;
+        border-radius: 0.3em;
+        font-size: 1em;
+        padding: 0.3em;
+        width: 99%;
+    }
+
+    input::placeholder{
+        font-size: 0.9em;
+    }
+
+    button {
+        margin: 1em;
+        border-radius: 1em;
+        font-size: 1.2em;
+        cursor: pointer;
+        color: rgb(0, 216, 255);
+        background-color: #222222;
+        padding: 0.3em 0.8em;
+        transition: 0.5s;
+        position: fixed;
+        bottom: 2em;
+
+        &:hover {
+            background-color: rgb(84, 84, 84);
+            transition: 0.5s;
+        }
+    }
+}
+
+.loginFormSelect {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0.5em;
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    padding: 0.3em;
+    border: 0.2em solid black;
+}
+
+.textFormNew {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 0.2em;
+    padding: 0.1em;
+    width: 100%;
+    margin-left: 1em;
+    margin-top: 0.7em;
+    color: #222222;
+    font-weight: bold;
+    
+}
+

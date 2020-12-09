@@ -1,0 +1,67 @@
+.containerCitasD{
+    all: unset;
+    margin-top: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.citasD {
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgba(0, 216, 255, 0.6);
+    width: 80%;
+    color: #222;
+    font-size: 1em;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.botonCitasD{
+    border-radius: 0.3em;
+    margin: 0.3em;
+    padding: 0.4em;
+    width: 7em;
+    color: rgb(204, 57, 57);
+    font-size: 1em;
+    background-color: #222;
+}
+
+.tablaCitas {
+    background-color: rgba(0, 216, 255, 0.6);
+    margin-top: 6em;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    padding-top: 1em;
+
+}
+
+.tabla {
+    border: 1px solid black;
+    margin: 1em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2em 2em;
+}
+
+.botonBorrar {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+
+.borde {
+    background-color: transparent;
+    font-weight: 600;
+}

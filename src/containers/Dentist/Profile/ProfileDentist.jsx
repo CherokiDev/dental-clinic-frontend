@@ -42,8 +42,11 @@ const Profile = (props) => {
       <body className="body">
         
         <div className="header">
-            <div className="buttons">
-                <Link to onClick={salir}>Salir</Link>
+        <div className="tittleHome2">
+					DENTAL CLINIC ALWAYS SMILE - Dentist Area
+            	</div>
+            <div className="button-quit">
+                <Link to onClick={salir}></Link>
             </div>
         </div>
 

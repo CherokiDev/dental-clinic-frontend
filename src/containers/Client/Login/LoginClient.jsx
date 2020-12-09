@@ -49,7 +49,7 @@ const Login = (props) => {
 					<Link to='/client'></Link>
 				</div>
 				<div className="tittleHome2">
-					DENTAL CLINIC ALWAYS SMILE
+					DENTAL CLINIC ALWAYS SMILE - User Area
             	</div>
 			</div>
 

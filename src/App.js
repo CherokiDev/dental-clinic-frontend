@@ -7,7 +7,7 @@ import LoginClient from './containers/Client/Login/LoginClient';
 import SignupClient from './containers/Client/Signup/SignupClient';
 import ProfileDentist from './containers/Dentist/Profile/ProfileDentist';
 import NewAppointment from './containers/Dentist/NewAppointment/NewAppointment';
-import ShowAppointments from './containers/Dentist/ShowAppointments/ShowAppointments';
+import ShowAppointmentsDentist from './containers/Dentist/ShowAppointments/ShowAppointmentsDentist';
 import Dentist from './containers/Dentist/Dentist';
 import LoginDentist from './containers/Dentist/Login/LoginDentist';
 import SignupDentist from './containers/Dentist/Signup/SignupDentist';
@@ -29,7 +29,7 @@ function App() {
         <Route path='/dentist/signup' component={SignupDentist} exact />
         <Route path='/dentist/profile' component={ProfileDentist} exact />
         <Route path='/dentist/newappointment' component={NewAppointment} exact />
-        <Route path='/dentist/showappointments' component={ShowAppointments} exact/>
+        <Route path='/dentist/showappointments' component={ShowAppointmentsDentist} exact/>
       </Switch>
     </BrowserRouter>
   );

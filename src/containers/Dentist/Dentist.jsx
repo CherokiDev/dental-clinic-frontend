@@ -13,8 +13,8 @@ const Client = () => {
           <div className="buttons">
             <Link to="/dentist/signup">Signup</Link>
           </div>
-          <div className="buttons">
-              <Link to="/">Back</Link>
+          <div className="button-back">
+              <Link to="/"></Link>
           </div>
         </div>
   

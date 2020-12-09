@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 
 
 const Profile = (props) => {
-  const userLogin = JSON.parse(localStorage.getItem('user'));
+  //const userLogin = JSON.parse(localStorage.getItem('user'));
   //const [datosCitas, setCitas] = useState([]);
-  const compruebaToken = localStorage.getItem('token');
+  //const compruebaToken = localStorage.getItem('token');
 
 
   const history = useHistory();
@@ -17,14 +17,13 @@ const Profile = (props) => {
 
   const salir = async () => {
     localStorage.clear();
-    //await axios.put('https://appappointments.herokuapp.com/users/logout/'+ userLogin.email)
     history.push('/');
     await props.dispatch({ type: LOGOUT, payload: {} });
   }
 
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     axios.get('http://localhost:8000/api/clientes/', {
       headers: {
         Authorization: "Bearer " + compruebaToken.replace(/\"/g, "")
@@ -35,14 +34,14 @@ const Profile = (props) => {
       }).catch((err) => {
         console.log(err)
       });
-  }, [])
+  }, []) */
 
   return (
     <body className="body">
 
       <div className="header">
         <div className="tittleHome2">
-          DENTAL CLINIC ALWAYS SMILE
+          DENTAL CLINIC ALWAYS SMILE - Client Area
         </div>
         <div className="button-quit">
           <Link to onClick={salir}></Link>

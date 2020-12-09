@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Client.scss'
 
-
 const Client = () => {
     return (
         <body className="body">

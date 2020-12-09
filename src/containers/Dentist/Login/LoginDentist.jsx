@@ -47,10 +47,13 @@ const Login = (props) => {
 	return (
 		<body className="body">
 
-			<div className="header">
-				<div className="buttons">
-					<Link to='/dentist'>Back</Link>
+<div className="header">
+				<div className="button-back">
+					<Link to='/dentist'></Link>
 				</div>
+				<div className="tittleHome2">
+					DENTAL CLINIC ALWAYS SMILE - Dentist Area
+            	</div>
 			</div>
 
 			<div className="containerFormLogin">
