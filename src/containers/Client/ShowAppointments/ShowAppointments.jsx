@@ -61,9 +61,6 @@ const ShowAppointments = () => {
                 </div>
             </div>
 
-
-            {/* {datosCitas?.map(cita => <div className="citas" key={cita._id}>{cita.tipo}  {cita.descripcion} {cita.precio}<button className="botonCitas" onClick={() => localizaConcretamente(cita.id)}>Borrar</button></div>)} */}
-
             <div className="tablaCitas">
 
 
@@ -85,6 +82,14 @@ const ShowAppointments = () => {
                 </div>
 
                 <div className="borde">
+                        <div>FECHA</div>
+                        {datosCitas?.map(cita =>
+                        <div className="tabla">                            
+                            <div>{cita.fecha_cita}</div>                            
+                        </div>)}
+                    </div>
+
+                <div className="borde">
                     <div>PRECIO</div>
                     {datosCitas?.map(cita =>
                         <div className="tabla">
@@ -102,11 +107,6 @@ const ShowAppointments = () => {
 
 
             </div>
-
-
-
-
-
 
         </body>
     )

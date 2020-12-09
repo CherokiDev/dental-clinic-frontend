@@ -75,6 +75,14 @@ const ShowAppointments = () => {
                     </div>
 
                     <div className="borde">
+                        <div>FECHA</div>
+                        {datosCitas?.map(cita =>
+                        <div className="tabla">                            
+                            <div>{cita.fecha_cita}</div>                            
+                        </div>)}
+                    </div>
+
+                    <div className="borde">
                         <div>DESCRIPCIÓN</div>
                         {datosCitas?.map(cita =>
                         <div className="tabla">                                               

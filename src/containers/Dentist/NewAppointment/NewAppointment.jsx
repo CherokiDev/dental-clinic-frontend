@@ -31,6 +31,7 @@ const NewAppointment = (props) => {
         const appointment = {
             tipo: event.target.tipo.value,
             descripcion: event.target.descripcion.value,
+            fecha_cita: event.target.fecha_cita.value,
             precio: event.target.precio.value,
             cliente_id: event.target.cliente_id.value,
             dentista_id: compruebaDentista.id
@@ -77,9 +78,12 @@ const NewAppointment = (props) => {
                         <option value="">Elige una opción</option>
                         <option value="Ortodoncia">Ortodoncia</option>
                         <option value="Empaste">Empaste</option>
+                        <option value="Extracción">Extracción</option>
                     </select>
                     <div className="textFormNew">Descripción:</div>
                     <input type="text" name="descripcion" required placeholder="Introduce una descripcion" />
+                    <div className="textFormNew">Fecha de la cita:</div>
+                    <input type="date" name="fecha_cita" required />
                     <div className="textFormNew">Precio:</div>
                     <input type="text" name="precio" required placeholder="Introduce un precio" />
                     <div className="textFormNew">Cliente:</div>
